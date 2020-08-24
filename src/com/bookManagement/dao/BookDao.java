@@ -52,6 +52,7 @@ public class BookDao {
 	 ResultSet resultset = statement.executeQuery(sql);
 	 while(resultset.next()) {
 		 int id = resultset.getInt("book_id");
+		 //System.out.println(id);
 		 String title = resultset.getString("title");
 		 String author = resultset.getString("author");
          float price = resultset.getFloat("price");

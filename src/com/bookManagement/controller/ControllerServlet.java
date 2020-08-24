@@ -58,6 +58,7 @@ public class ControllerServlet extends HttpServlet {
 				updateBook(request,response);
 				break;
 			default:
+				System.out.println("default");
 				listBook(request,response);
 			}
 		}catch(SQLException e) {
@@ -67,7 +68,7 @@ public class ControllerServlet extends HttpServlet {
     private void listBook(HttpServletRequest request,HttpServletResponse response )
     		throws SQLException,IOException,ServletException {
     	List<Book> listBook = bookDao.listAllBooks();
-    	request.setAttribute("listbook", listBook);
+    	request.setAttribute("listBook", listBook);
     	RequestDispatcher dispatcher = request.getRequestDispatcher("BookList.jsp");
     	dispatcher.forward(request, response);
     }
