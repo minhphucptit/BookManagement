@@ -11,8 +11,8 @@
 <center>
  <h1>Books Management</h1>
  <h2>
- <a href="/new">Add New Book</a>
- <a href="/list">List All Books</a>
+ <a href="/bookManagement/new">Add New Book</a>
+ <a href="/bookManagement/list">List All Books</a>
  </h2>
 </center>
 <div align = "center">
@@ -25,16 +25,16 @@
       <th>Price</th>
       <th>Actions</th>
      </tr>
-     <c:forEach var="book" items="${listBook }">
+     <c:forEach var="book" items="${listBook}">
       <tr>
        <td><c:out value="${book.id}"/></td>
        <td><c:out value="${book.title}"/></td>
        <td><c:out value="${book.author}"/></td>
        <td><c:out value="${book.price}"/></td>
        <td>
-          <a href="/edit?id=<c:out value='${book.id}' />">Edit</a>
+          <a href="/bookManagement/edit?id=<c:out value='${book.id}' />">Edit</a>
                &nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="/delete?id=<c:out value='${book.id}' />">Delete</a>                     
+          <a href="/bookManagement/delete?id=<c:out value='${book.id}' />">Delete</a>                     
        </td>
       </tr>
      </c:forEach>
